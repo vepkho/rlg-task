@@ -10,7 +10,7 @@
 
 <script>
 import Wrapper from "../Wrapper/Wrapper.vue";
-import GameItem from "../GameItem/GameItem.vue";
+import GameItem from "./GameItem.vue";
 export default {
   components: {
     GameItem,
@@ -24,23 +24,23 @@ export default {
           title: "Temple Tumble",
         },
         {
-          icon: require("./assets/temple.png"),
+          icon: require("./assets/book.png"),
           title: "Book Of Dead",
         },
         {
-          icon: require("./assets/temple.png"),
+          icon: require("./assets/anksu.png"),
           title: "Anksunamun",
         },
         {
-          icon: require("./assets/temple.png"),
+          icon: require("./assets/fallen.png"),
           title: "Book Of Fallen",
         },
         {
-          icon: require("./assets/temple.png"),
+          icon: require("./assets/dog.png"),
           title: "house Multihold",
         },
         {
-          icon: require("./assets/temple.png"),
+          icon: require("./assets/athena.png"),
           title: "Athena's Glory",
         },
       ],
