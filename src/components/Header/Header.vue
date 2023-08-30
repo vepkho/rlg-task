@@ -19,6 +19,9 @@ export default {
 
 <style lang="scss">
 .header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 24px 0;
 }
 </style>
