@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cards {
   padding: 0 16px;
   ul {
@@ -57,6 +57,7 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 140px;
     column-gap: 14px;
+    list-style: none;
 
     @media screen and (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);

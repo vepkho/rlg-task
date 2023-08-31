@@ -99,6 +99,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.predictions {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    column-gap: 16px;
+    list-style: none;
+  }
+}
 li:last-child {
   filter: brightness(0.2) opacity(0.8);
 }

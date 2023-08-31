@@ -4,7 +4,7 @@
       <div class="title">
         {{ firstWord }} <span>{{ secondWord }}</span>
       </div>
-      <div class="label">{{ buttonLabel }}</div>
+      <div class="label" v-if="buttonLabel">{{ buttonLabel }}</div>
     </div>
     <div class="slot">
       <slot></slot>
