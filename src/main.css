@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-image: url("./assets/background-image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
   font-family: sans-serif;
 }
 
 body {
-  /* background-color: black; */
+  background-color: black;
+  background-image: url("./assets/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow-x: hidden;
 }

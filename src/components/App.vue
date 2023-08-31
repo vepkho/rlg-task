@@ -7,6 +7,9 @@
   <Providers />
   <Promotions />
   <LiveCasino />
+  <ProvidersSlider />
+  <Payment />
+  <Footer />
 </template>
 
 <script>
@@ -18,6 +21,9 @@ import Predictions from "./Predictions/Predictions.vue";
 import Providers from "./Providers/Providers.vue";
 import Promotions from "./Promotions/Promotions.vue";
 import LiveCasino from "./LiveCasino/LiveCasino.vue";
+import ProvidersSlider from "./ProvidersSlider/ProvidersSlider.vue";
+import Payment from "./Payment/Payment.vue";
+import Footer from "./Footer/Footer.vue";
 
 export default {
   components: {
@@ -29,6 +35,9 @@ export default {
     Providers,
     Promotions,
     LiveCasino,
+    ProvidersSlider,
+    Payment,
+    Footer,
   },
 };
 </script>

@@ -60,6 +60,7 @@ ul {
     height: 88px;
     border-radius: 20px;
     background: #16181d;
+    cursor: pointer;
   }
 }
 </style>

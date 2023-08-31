@@ -94,6 +94,7 @@ export default {
       align-items: center;
       gap: 10px;
       height: 24px;
+      cursor: pointer;
 
       .image {
         width: 24px;

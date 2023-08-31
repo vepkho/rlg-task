@@ -175,6 +175,7 @@ export default {
       width: 100%;
       background: #0f1010;
       border-radius: 0 0 4px 4px;
+      cursor: pointer;
 
       p {
         color: #f0f0f0;

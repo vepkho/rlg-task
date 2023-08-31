@@ -65,6 +65,12 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
 
+    .left {
+      img {
+        cursor: pointer;
+      }
+    }
+
     .right {
       display: flex;
       justify-content: space-between;
@@ -100,6 +106,7 @@ export default {
             width: 18px;
             height: 14px;
             background: none;
+            cursor: pointer;
           }
         }
       }
@@ -148,6 +155,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
       }
     }
   }

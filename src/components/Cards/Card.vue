@@ -67,6 +67,7 @@ export default {
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      cursor: pointer;
 
       position: absolute;
       bottom: 32px;
