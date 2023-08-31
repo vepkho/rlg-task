@@ -1,9 +1,11 @@
 <template>
   <div class="games-block">
     <Wrapper title="Most Popupar" buttonLabel="view all">
-      <li v-for="item in gameItems" :key="item.title">
-        <GameItem :title="item.title" :image="item.icon" />
-      </li>
+      <ul>
+        <li v-for="item in gameItems" :key="item.title">
+          <GameItem :title="item.title" :image="item.icon" />
+        </li>
+      </ul>
     </Wrapper>
   </div>
 </template>
@@ -50,7 +52,15 @@ export default {
 </script>
 
 <style lang="scss">
-li {
-  list-style: none;
+ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 10px;
+
+  li {
+    list-style: none;
+  }
 }
 </style>
