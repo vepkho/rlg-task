@@ -28,6 +28,11 @@ export default {
   border: 1px solid #282e3d;
   background: #16181d;
 
+  @media screen and (max-width: 1024px) {
+    max-width: 332px;
+    height: 196px;
+  }
+
   .dot {
     position: absolute;
   }
@@ -47,9 +52,15 @@ export default {
       top: 10%;
       left: 50%;
       transform: translate(-50%, -55%);
+
+      @media screen and (max-width: 1024px) {
+        transform: translate(-50%, -55%) scale(0.5);
+      }
     }
 
     p {
+      width: 100%;
+      text-align: center;
       color: #fff;
       font-family: "Inter Variable", sans-serif;
       font-size: 40px;
@@ -61,6 +72,10 @@ export default {
       bottom: 32px;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: 1024px) {
+        font-size: 24px;
+      }
     }
   }
 

@@ -23,7 +23,8 @@ export default {
 
 <style lang="scss" scoped>
 .game-item {
-  width: 191.6px;
+  width: 100%;
+  max-width: 191.6px;
   height: 278px;
   margin-top: 24px;
   position: relative;
@@ -31,6 +32,10 @@ export default {
   border: 1px solid #515151;
   box-shadow: 0px 114px 86px -48px rgba(242, 156, 31, 0.39);
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    height: 216px;
+  }
 
   &::before {
     content: "";
@@ -44,7 +49,7 @@ export default {
     position: absolute;
     left: -0;
     bottom: 2px;
-    width: 191px;
+    width: inherit;
     height: 0;
     z-index: -1;
     transition: all 0.3s ease-in-out;
@@ -60,8 +65,9 @@ export default {
 
   .banner {
     border-radius: 20px;
-    width: 191.6px;
-    height: 278px;
+    width: 100%;
+    max-width: 191.6px;
+    height: inherit;
   }
 
   .overlay {

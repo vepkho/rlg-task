@@ -40,8 +40,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   padding: 44px 16px 16px 16px;
-  .header,
-  .slot {
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;

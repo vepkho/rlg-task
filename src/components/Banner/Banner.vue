@@ -35,6 +35,7 @@ export default {};
     margin: 0 auto;
     border-radius: 20px;
     background-image: url("../../assets/fade.svg");
+    overflow: hidden;
 
     .title {
       position: absolute;
@@ -59,6 +60,7 @@ export default {};
       position: absolute;
       bottom: 38px;
       left: 22px;
+      cursor: pointer;
     }
 
     .banner-image {
