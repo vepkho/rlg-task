@@ -72,49 +72,76 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: auto;
-  min-height: 56px;
-  display: flex;
-  justify-content: center;
+  display: none;
+  position: absolute;
+  top: 75px;
+  z-index: 9;
+  height: 100%;
   padding: 16px 16px;
   width: 100%;
   background: #16181d;
+  overflow: auto;
 
   @media screen and (max-width: 1024px) {
-    display: none;
+    display: block;
   }
 
   ul {
-    width: 1200px;
     list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
     flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px;
+
+    @media screen and (max-width: 468px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
 
     li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       height: 24px;
       cursor: pointer;
+      width: calc(100% - 16px);
+      height: 120px;
+      margin: 0 0 10px 0;
+      box-shadow: inset 0 1px 0 0 #3b3d44;
+      border-radius: 6px;
+      transition: 0.3s all;
+      background: #27292e;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 12px;
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+        height: 100%;
+        gap: 16px;
+      }
 
       .image {
-        width: 24px;
-        height: 24px;
-        background-color: #0f1010;
+        width: 64px;
+        height: 64px;
         border-radius: 4px;
 
         display: flex;
         align-items: center;
         justify-content: center;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
       }
 
       p {
         color: #fff;
         font-family: "Montserrat Variable", sans-serif;
-        font-size: 12px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 700;
         line-height: 16px;

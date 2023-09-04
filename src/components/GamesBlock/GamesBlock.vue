@@ -59,8 +59,14 @@ ul {
   grid-template-columns: repeat(6, 1fr);
   column-gap: 10px;
 
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   li {
     list-style: none;
+    align-self: center;
+    justify-self: center;
   }
 }
 </style>

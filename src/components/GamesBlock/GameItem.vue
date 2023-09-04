@@ -37,6 +37,10 @@ export default {
     height: 216px;
   }
 
+  @media screen and (max-width: 440px) {
+    height: 168px;
+  }
+
   &::before {
     content: "";
     border-radius: 20px;
@@ -93,6 +97,15 @@ export default {
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      @media screen and (max-width: 440px) {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
     }
 
     .actions {
@@ -101,6 +114,10 @@ export default {
       gap: 13px;
       margin-top: 36px;
 
+      @media screen and (max-width: 992px) {
+        margin-top: 12px;
+      }
+
       p {
         color: #f29c1f;
         font-family: "Montserrat Variable", sans-serif;
@@ -108,6 +125,24 @@ export default {
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+
+        @media screen and (max-width: 440px) {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        @media screen and (max-width: 440px) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    img {
+      @media screen and (max-width: 440px) {
+        width: 48px;
+        height: 48px;
       }
     }
   }

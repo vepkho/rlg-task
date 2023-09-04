@@ -101,11 +101,29 @@ export default {};
     justify-content: center;
     gap: 48px;
 
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: unset;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: 420px) {
+      transform: scale(0.9);
+    }
+
     .legal {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
       gap: 32px;
+
+      @media screen and (max-width: 1024px) {
+        align-items: center;
+        text-align: center;
+      }
 
       p {
         max-width: 305px;
@@ -123,6 +141,11 @@ export default {};
       align-items: flex-start;
       justify-content: space-between;
       gap: 68px;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 16px;
+      }
 
       .nav {
         display: flex;
@@ -153,6 +176,12 @@ export default {};
           cursor: pointer;
         }
       }
+
+      @media screen and (max-width: 768px) {
+        .link {
+          display: none;
+        }
+      }
     }
 
     .contact {
@@ -160,6 +189,12 @@ export default {};
       align-items: flex-end;
       flex-direction: column;
       gap: 16px;
+
+      @media screen and (max-width: 768px) {
+        .work-hours {
+          display: none;
+        }
+      }
 
       .title {
         color: #fff;
@@ -180,6 +215,10 @@ export default {};
         align-items: flex-end;
         justify-content: flex-end;
         cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
 
         p {
           color: #b5b5b5;
@@ -212,6 +251,11 @@ export default {};
     justify-content: space-between;
     padding-top: 32px;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 12px;
+    }
     .email {
       display: flex;
       align-items: center;
@@ -247,6 +291,15 @@ export default {};
     border-top: 1px solid #2b2d34;
     border-bottom: 1px solid #2b2d34;
     cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      gap: 16px;
+      justify-content: flex-end;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     .language {
       position: absolute;
@@ -288,10 +341,21 @@ export default {};
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 24px;
+      flex-direction: column;
+      text-align: center;
+      gap: 8px;
+    }
     .left {
       display: flex;
       align-items: center;
       gap: 10px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
 
       p {
         color: #fff;

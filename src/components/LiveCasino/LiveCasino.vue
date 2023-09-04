@@ -56,6 +56,15 @@ export default {
       max-width: 232px;
       cursor: pointer;
     }
+
+    @media screen and (max-width: 568px) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 20px;
+
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }
 </style>

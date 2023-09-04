@@ -37,6 +37,15 @@ export default {};
     background-image: url("../../assets/fade.svg");
     overflow: hidden;
 
+    @media screen and (max-width: 562px) {
+      max-width: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 32px;
+    }
+
     .title {
       position: absolute;
       left: 50px;
@@ -51,6 +60,20 @@ export default {};
       letter-spacing: 1.6px;
       text-transform: capitalize;
 
+      @media screen and (max-width: 562px) {
+        position: unset;
+        text-align: center;
+        font-size: 24px;
+        width: 340px;
+      }
+
+      @media screen and (max-width: 420px) {
+        position: unset;
+        text-align: center;
+        font-size: 18px;
+        width: 280px;
+      }
+
       .highlight {
         color: #f29c1f;
       }
@@ -61,6 +84,12 @@ export default {};
       bottom: 38px;
       left: 22px;
       cursor: pointer;
+
+      @media screen and (max-width: 562px) {
+        position: unset;
+        text-align: center;
+        font-size: 24px;
+      }
     }
 
     .banner-image {
@@ -80,6 +109,11 @@ export default {};
       bottom: 0;
       left: 18px;
       z-index: 3;
+
+      @media screen and (max-width: 562px) {
+        width: 100%;
+        left: 0;
+      }
     }
   }
 }

@@ -67,6 +67,10 @@ export default {
     border-top: 1px solid #232323;
     border-bottom: 1px solid #232323;
     padding: 32px 0 32px 32px;
+
+    @media screen and (max-width: 768px) {
+      overflow: hidden;
+    }
     li {
       display: flex;
       align-items: center;

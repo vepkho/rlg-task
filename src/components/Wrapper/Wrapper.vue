@@ -64,6 +64,11 @@ export default {
       text-transform: capitalize;
       background-color: #151d24;
 
+      @media screen and (max-width: 768px) {
+        padding: 12px 24px;
+        font-size: 18px;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -74,6 +79,11 @@ export default {
         flex-shrink: 0;
         border-radius: 10px;
         background: #f29c1f;
+
+        @media screen and (max-width: 768px) {
+          top: 7.2px;
+          height: 32px;
+        }
       }
 
       span {
@@ -85,6 +95,10 @@ export default {
         line-height: 20px;
         letter-spacing: -0.96px;
         text-transform: capitalize;
+
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+        }
       }
     }
 
@@ -102,6 +116,10 @@ export default {
       font-weight: 400;
       line-height: 20px;
       cursor: pointer;
+      @media screen and (max-width: 768px) {
+        padding: 8px 16px;
+        font-size: 15px;
+      }
     }
   }
 }

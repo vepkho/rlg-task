@@ -107,6 +107,7 @@ export default {
     margin: 0 auto;
     column-gap: 16px;
     list-style: none;
+    overflow: hidden;
   }
 }
 li:last-child {

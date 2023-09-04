@@ -51,6 +51,7 @@ ul {
   grid-template-columns: repeat(6, 1fr);
   column-gap: 20px;
   list-style: none;
+  overflow: hidden;
   li {
     display: flex;
     align-items: center;

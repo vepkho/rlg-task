@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       currentTime: "",
+      isVisible: false,
     };
   },
   mounted() {
@@ -20,6 +21,22 @@ export default {
       const seconds = now.getSeconds().toString().padStart(2, "0");
       this.currentTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     },
+    toggleVisibility() {
+      this.isVisible = !this.isVisible;
+      this.$emit("menuToggle", this.isVisible);
+    },
+  },
+  watch: {
+    isVisible(newVal) {
+      if (newVal === true) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    },
+  },
+  beforeUnmount() {
+    document.body.style.overflow = "";
   },
 };
 </script>
@@ -28,7 +45,20 @@ export default {
   <div class="container">
     <div class="top-section">
       <div class="left">
-        <img src="./assets/topSection/logo.svg" alt="logo" />
+        <button class="menu" @click="toggleVisibility">
+          <img
+            src="./assets/topSection/menu.png"
+            alt="menu icon"
+            v-if="!isVisible"
+          />
+          <img
+            src="./assets/topSection/exit.png"
+            alt="menu icon"
+            v-if="isVisible"
+          />
+        </button>
+        <img src="./assets/topSection/logo.svg" alt="logo" class="logo" />
+        <img src="./assets/topSection/logo-sm.png" alt="logo" class="logo-sm" />
       </div>
       <div class="right">
         <div class="details">
@@ -66,8 +96,41 @@ export default {
     margin: 0 auto;
 
     .left {
-      img {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .menu {
+        display: none;
+        width: 32px;
+        height: 32px;
+        background: #26292e;
+        box-shadow: inset 0 1px 0 0 #34373a;
+        border-radius: 6px;
+        border: none;
         cursor: pointer;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        @media screen and (max-width: 1024px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .logo {
+        cursor: pointer;
+        @media screen and (max-width: 576px) {
+          display: none;
+        }
+      }
+
+      .logo-sm {
+        display: none;
+        @media screen and (max-width: 576px) {
+          display: block;
+        }
       }
     }
 
@@ -77,10 +140,18 @@ export default {
       align-items: center;
       width: 520px;
 
+      @media screen and (max-width: 1024px) {
+        max-width: 240px;
+      }
+
       .details {
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
 
         .time {
           color: #8d8d8d;

@@ -22,10 +22,21 @@ export default {};
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     padding-top: 24px;
+
     img {
       width: 100%;
       max-width: 386.6px;
+      min-width: 220px;
       cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 20px;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
