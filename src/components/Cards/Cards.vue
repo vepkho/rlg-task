@@ -62,6 +62,9 @@ export default {
     @media screen and (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
     }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 </style>

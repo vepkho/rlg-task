@@ -24,11 +24,17 @@ export default {};
     grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
     padding-top: 24px;
+
     img {
       width: 100%;
       max-width: 108px;
       height: 36px;
       cursor: pointer;
+    }
+
+    @media screen and (max-width: 568px) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
     }
   }
 }
