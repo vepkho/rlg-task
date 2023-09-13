@@ -36,5 +36,6 @@ export default {
   flex-direction: column;
   gap: 24px;
   padding: 24px 0;
+  margin: 0 auto;
 }
 </style>

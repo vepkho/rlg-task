@@ -1,13 +1,17 @@
 <template>
   <div class="navbar">
-    <ul>
-      <li v-for="item in navItems" :key="item.title">
-        <div class="image">
-          <img :src="item.icon" :alt="item.title" />
-        </div>
-        <p>{{ item.title }}</p>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li v-for="item in navItems" :key="item.title">
+          <router-link :to="{ name: item.title }" class="nav-link">
+            <div class="image">
+              <img :src="item.icon" :alt="item.title" />
+            </div>
+            <p>{{ item.title }}</p>
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -42,7 +46,7 @@ export default {
         },
         {
           icon: require("./assets/navbar/games.svg"),
-          title: "games",
+          title: "Games",
         },
         {
           icon: require("./assets/navbar/bingo.svg"),
@@ -99,7 +103,7 @@ export default {
       grid-template-rows: repeat(6, 1fr);
     }
 
-    li {
+    .nav-link {
       height: 24px;
       cursor: pointer;
       width: calc(100% - 16px);

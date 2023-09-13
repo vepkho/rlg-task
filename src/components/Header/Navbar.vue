@@ -1,13 +1,17 @@
 <template>
   <div class="navbar">
-    <ul>
-      <li v-for="item in navItems" :key="item.title">
-        <div class="image">
-          <img :src="item.icon" :alt="item.title" />
-        </div>
-        <p>{{ item.title }}</p>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li v-for="item in navItems" :key="item.title">
+          <router-link :to="{ name: item.title }" class="nav-link">
+            <div class="image">
+              <img :src="item.icon" :alt="item.title" />
+            </div>
+            <p>{{ item.title }}</p>
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -42,7 +46,7 @@ export default {
         },
         {
           icon: require("./assets/navbar/games.svg"),
-          title: "games",
+          title: "Games",
         },
         {
           icon: require("./assets/navbar/bingo.svg"),
@@ -84,41 +88,43 @@ export default {
     display: none;
   }
 
-  ul {
+  nav {
     width: 1200px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-    flex-wrap: wrap;
 
-    li {
+    ul {
+      max-width: 1200px;
+      list-style: none;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      height: 24px;
-      cursor: pointer;
+      justify-content: space-between;
 
-      .image {
-        width: 24px;
-        height: 24px;
-        background-color: #0f1010;
-        border-radius: 4px;
-
+      .nav-link {
         display: flex;
         align-items: center;
-        justify-content: center;
-      }
+        gap: 10px;
+        height: 24px;
+        cursor: pointer;
+        text-decoration: none;
 
-      p {
-        color: #fff;
-        font-family: "Montserrat Variable", sans-serif;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 16px;
-        letter-spacing: -0.6px;
+        .image {
+          width: 24px;
+          height: 24px;
+          background-color: #0f1010;
+          border-radius: 4px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        p {
+          color: #fff;
+          font-family: "Montserrat Variable", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 16px;
+          letter-spacing: -0.6px;
+        }
       }
     }
   }
