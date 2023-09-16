@@ -1,46 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      currentTime: "",
-      isVisible: false,
-    };
-  },
-  mounted() {
-    this.updateTime();
-    setInterval(this.updateTime, 1000);
-  },
-  methods: {
-    updateTime() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = (now.getMonth() + 1).toString().padStart(2, "0");
-      const day = now.getDate().toString().padStart(2, "0");
-      const hours = now.getHours().toString().padStart(2, "0");
-      const minutes = now.getMinutes().toString().padStart(2, "0");
-      const seconds = now.getSeconds().toString().padStart(2, "0");
-      this.currentTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    },
-    toggleVisibility() {
-      this.isVisible = !this.isVisible;
-      this.$emit("menuToggle", this.isVisible);
-    },
-  },
-  watch: {
-    isVisible(newVal) {
-      if (newVal === true) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "";
-      }
-    },
-  },
-  beforeUnmount() {
-    document.body.style.overflow = "";
-  },
-};
-</script>
-
 <template>
   <div class="container">
     <div class="top-section">
@@ -49,16 +6,24 @@ export default {
           <img
             src="./assets/topSection/menu.png"
             alt="menu icon"
-            v-if="!isVisible"
+            v-if="!this.$store.state.isMenuVisible"
           />
           <img
             src="./assets/topSection/exit.png"
             alt="menu icon"
-            v-if="isVisible"
+            v-if="this.$store.state.isMenuVisible"
           />
         </button>
-        <img src="./assets/topSection/logo.svg" alt="logo" class="logo" />
-        <img src="./assets/topSection/logo-sm.png" alt="logo" class="logo-sm" />
+        <router-link to="/">
+          <img src="./assets/topSection/logo.svg" alt="logo" class="logo" />
+        </router-link>
+        <router-link to="/">
+          <img
+            src="./assets/topSection/logo-sm.png"
+            alt="logo"
+            class="logo-sm"
+          />
+        </router-link>
       </div>
       <div class="right">
         <div class="details">
@@ -76,13 +41,61 @@ export default {
           <button class="btn-transparent">Login</button>
           <button class="btn-full">Sign Up</button>
         </div>
-        <div class="language">
-          <img src="./assets/topSection/language.png" alt="language" />
-        </div>
+        <Dropdown />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from "vuex";
+import Dropdown from "../Dropdown/Dropdown.vue";
+export default {
+  components: {
+    Dropdown,
+  },
+  data() {
+    return {
+      currentTime: "",
+      isVisible: false,
+    };
+  },
+  computed: {
+    ...mapState(["isMenuVisible"]),
+  },
+  mounted() {
+    this.updateTime();
+    setInterval(this.updateTime, 1000);
+  },
+  methods: {
+    updateTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = (now.getMonth() + 1).toString().padStart(2, "0");
+      const day = now.getDate().toString().padStart(2, "0");
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      this.currentTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    },
+    toggleVisibility() {
+      this.$store.dispatch("toggleVisibility");
+    },
+  },
+  watch: {
+    isVisible(newVal) {
+      if (newVal === true) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    },
+  },
+  beforeUnmount() {
+    document.body.style.overflow = "";
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .container {
@@ -227,6 +240,7 @@ export default {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        appearance: none;
       }
     }
   }

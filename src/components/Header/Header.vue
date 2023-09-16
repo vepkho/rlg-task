@@ -2,7 +2,7 @@
   <div class="header">
     <TopSection @menuToggle="handleMenuToggle" />
     <Navbar />
-    <NavbarMobile v-if="isVisible" />
+    <NavbarMobile v-if="this.$store.state.isMenuVisible" />
   </div>
 </template>
 
@@ -12,11 +12,6 @@ import Navbar from "./Navbar.vue";
 import NavbarMobile from "./NavbarMobile.vue";
 
 export default {
-  data() {
-    return {
-      isVisible: false,
-    };
-  },
   components: {
     TopSection,
     Navbar,

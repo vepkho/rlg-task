@@ -1,3 +1,13 @@
 <template>
-  <h1>Casino Page</h1>
+  <CasinoGames />
 </template>
+
+<script>
+import CasinoGames from "../components/CasinoGames/CasinoGames.vue";
+export default {
+  name: "Casino",
+  components: {
+    CasinoGames,
+  },
+};
+</script>

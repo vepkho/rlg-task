@@ -2,8 +2,8 @@
   <div class="container">
     <div class="banner">
       <p class="title">
-        GET THE BONUS ON THE FIRST DEPOSIT UP TO
-        <span class="highlight">500 %</span> AND
+        {{ $t("title") }}
+        <span class="highlight">500 %</span> {{ $t("and") }}
         <span class="highlight">25 FS</span>
       </p>
       <img

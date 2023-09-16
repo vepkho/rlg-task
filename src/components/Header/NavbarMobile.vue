@@ -2,7 +2,11 @@
   <div class="navbar">
     <nav>
       <ul>
-        <li v-for="item in navItems" :key="item.title">
+        <li
+          v-for="item in navItems"
+          :key="item.title"
+          @click="toggleVisibility"
+        >
           <router-link :to="{ name: item.title }" class="nav-link">
             <div class="image">
               <img :src="item.icon" :alt="item.title" />
@@ -17,6 +21,11 @@
 
 <script>
 export default {
+  methods: {
+    toggleVisibility() {
+      this.$store.dispatch("toggleVisibility");
+    },
+  },
   data() {
     return {
       navItems: [
@@ -120,6 +129,7 @@ export default {
       justify-content: center;
       gap: 32px;
       padding: 12px;
+      text-decoration: none;
 
       @media screen and (max-width: 468px) {
         width: 100%;
@@ -150,6 +160,7 @@ export default {
         font-weight: 700;
         line-height: 16px;
         letter-spacing: -0.6px;
+        text-decoration: none;
       }
     }
   }

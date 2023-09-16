@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import Casino from "../views/Casino.vue";
 import ComingSoon from "../components/ComingSoon/ComingSoon.vue";
-
+import NotFound from "../components/NotFound/NotFound.vue";
 const routes = [
   {
     path: "/",
@@ -14,59 +15,58 @@ const routes = [
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/live-sport",
     name: "Live Sport",
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/casino",
     name: "Casino",
-    component: ComingSoon,
+    component: Casino,
   },
   {
-    path: "/",
+    path: "/live-casino",
     name: "Live Casino",
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/virtual",
     name: "Virtual",
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/games",
     name: "Games",
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/bingo",
     name: "Bingo",
     component: ComingSoon,
   },
   {
-    path: "/",
-    name: "Bingo",
-    component: ComingSoon,
-  },
-  {
-    path: "/",
+    path: "/beton",
     name: "Beton",
     component: ComingSoon,
   },
   {
-    path: "/",
-    name: "Virtual",
-    component: ComingSoon,
-  },
-  {
-    path: "/",
+    path: "/poker",
     name: "Poker",
     component: ComingSoon,
   },
   {
-    path: "/",
+    path: "/promotions",
     name: "Promotions",
     component: ComingSoon,
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: NotFound,
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/404",
   },
 ];
 
